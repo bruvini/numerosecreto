@@ -8,7 +8,7 @@ function verificaChute(chute) {
                 <h3>O número secreto era ${numeroSecreto}</h3>
                 <button id="jogarNovamente" class="btnJogar">Jogar Novamente</button>
             `
-            document.body.style.backgroundColor = "black"
+            document.body.style.backgroundColor = "black";
         } else {
             elementoChute.innerHTML += `<div> Valor Inválido</div> `
             return

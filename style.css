@@ -73,3 +73,19 @@ h3 {
     color: red;
     font-weight: 600;
 }
+
+@media screen and (min-width: 390px) {
+    .body{
+        padding: 10px;
+        font-size: 0.5em;
+    }
+    
+    .texto{
+        margin-top: 60px;
+    }
+
+    .mensagem{
+        padding: 5px;
+        font-size: 0.5em;
+    }
+}
