@@ -44,3 +44,19 @@ h3{
     padding: 10px;
     margin: 20px;
 }
+
+.btnJogar{
+    padding: 8px 15px;
+    border: 0;
+    background: var(--cor-primaria);
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.btnJogar:hover{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btnJogar:active{
+    box-shadow: inset 2px 2px 2px 0 black;
+}
