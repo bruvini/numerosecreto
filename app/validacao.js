@@ -1,28 +1,38 @@
-function verificaChute(chute){
+function verificaChute(chute) {
     const numero = +chute
     if (chuteInvalido(numero)) {
-        elementoChute.innerHTML += `<div>Valor Inválido</div>` 
-        return
+        if (chute.toUpperCase() === 'GAME OVER') {
+            document.body.innerHTML =
+                `
+                <h2>Ok! Entendemos que não queira mais jogar</h2>
+                <h3>O número secreto era ${numeroSecreto}</h3>
+                <button id="jogarNovamente" class="btnJogar">Jogar Novamente</button>
+            `
+            document.body.style.backgroundColor = "black"
+        } else {
+            elementoChute.innerHTML += `<div> Valor Inválido</div> `
+            return
+        }
     }
 
     if (foraParametro(numero)) {
-        elementoChute.innerHTML += `<div>Número inválido: o número secreto precisa estar entre ${menorValor} e ${maiorValor}</div>`
+        elementoChute.innerHTML += `<div> Número inválido: o número secreto precisa estar entre ${menorValor} e ${maiorValor}</div> `
         return
     }
 
     if (numero === numeroSecreto) {
         document.body.innerHTML = `
-        <h2>Parabéns, você acertou o número secreto do Bruno!</h2>
-        <h3>O número secreto era ${numeroSecreto}</h3>
-        <button id="jogarNovamente" class="btnJogar">Jogar Novamente</button>
+            <h2> Parabéns, você acertou o número secreto do Bruno!</h2>
+            <h3>O número secreto era ${numeroSecreto}</h3>
+            <button id="jogarNovamente" class="btnJogar">Jogar Novamente</button>
         `
     } else if (numero < numeroSecreto) {
         elementoChute.innerHTML += `
-        <div>o número secreto é maior <i class="fa-solid fa-up-long"></i></div>
+            <div> o número secreto é maior <i class="fa-solid fa-up-long"></i></div>
         `
     } else {
         elementoChute.innerHTML += `
-        <div>o número secreto é menor <i class="fa-solid fa-down-long"></i></div>
+            <div> o número secreto é menor <i class="fa-solid fa-down-long"></i></div>
         `
     }
 }
